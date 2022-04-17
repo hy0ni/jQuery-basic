@@ -9,7 +9,11 @@ $("#.btns").css({"border":"1px solid red"});
 $(".btns").css({"border":"1px solid red"});
 
 </div>
+
+
 <br>
+
+
 <div style="font-size:14px;background:#EFF5FB;padding:10px;border-radius:10px">
 <p style="font-size:15px;font-weight:bold;color:#585858">
 -이벤트 연결하기-
@@ -20,7 +24,11 @@ $(".btns").on("click",function(){
   console.log(this);
 });
 </div>
+
+
 <br>
+
+
 <div style="font-size:14px;background:#EFF5FB;padding:10px;border-radius:10px">
 <p style="font-size:15px;font-weight:bold;">
 -버튼 클릭시 클릭한 요소의 순서 구하기-
@@ -31,7 +39,11 @@ $(".btns li").on("click",function(){
 <br>	//alret(i) //ex.[0] [1] [2] ...
 });
 </div>
+
+
 <br>
+
+
 <div style="font-size:14px;background:#EFF5FB;padding:10px;border-radius:10px">
 <p style="font-size:15px;font-weight:bold;">
 -여러개의 요소중에 특정 요소만 선택했을때 해당 요소만 활성화-
@@ -48,7 +60,11 @@ $(".btns li").on("click",function(){
 	<br>$(this).children("a").css({"color":"red"});
 });
 </div>
+
+
 <br>
+
+
 <div style="font-size:14px;background:#EFF5FB;padding:10px;border-radius:10px">
 <p style="font-size:14px;color:#585858">
 <br>선택자.attr() 선택한 DOM의 속성(Attribute)를 제어
@@ -59,6 +75,8 @@ $(".btns li").on("click",function(){
 </p>
 </div>
 <br>
+
+
 ```html
 <body>
 	<a href="https://www.naver.com" target="_blank" 
@@ -67,6 +85,8 @@ $(".btns li").on("click",function(){
    <section id="test"></section>
 </body>
 ```
+
+
 ```Jquery
 $(function(){
 
@@ -78,8 +98,14 @@ title: "구글로 이동"
 
 });
 ```
+
+
 <br>
+
+
 ###### Attribute 제어
+
+
 ```jQery
 이벤트 연결 메서드 .on
 - 하나의 DOM에 여러개의 이벤트 등록이 필요한데 실행할 함수가 같을때 
@@ -103,7 +129,11 @@ $("#test").on({
 	
 });
 ```
+
+
 <br>
+
+
 ######mouseover / mouseenter
 ```jquery
 //mouseover와 mouseenter 차이점
@@ -117,8 +147,14 @@ mouseenter : 오로지 자기 자신에게 마우스 포인터가 진입해야 �
 해당 요소에 마우스 진입 이벤트가 발생되었을 때 설정한 함수가 실행된다.)
 
 ```
+
+
 <br>
+
+
 ######width / height 
+
+
 ```jquery
 width() : Element의 너비를 구함
 height() : Element의 높이를 구함
@@ -130,8 +166,14 @@ outerWidth(true) : margin까지의 너비를 구함
 outerHeight(true) : margin까지의 높이를 구함
 ```
 
+
+
 <br>
+
+
 ######clone()
+
+
 ```jquery
 
 <body>
@@ -148,7 +190,11 @@ outerHeight(true) : margin까지의 높이를 구함
 
 </body>
 ```
+
+
 <br>
+
+
 ```jquery
 
   <div id="buttons2">
@@ -181,9 +227,8 @@ $(function(){
 		$(this).css({top:idx* i*40 - 40 + 'px'}) 
 		// $(this).css({top:newTop}) 
 	});
-	
-
 
 });
 </script>
+
 ```
