@@ -1,4 +1,7 @@
+
 ######animate
+
+
 
 ```html
 
@@ -54,7 +57,11 @@ body{background-color: cadetblue;}
   }
 
 ```
+
+
 <br>
+
+
 ```jquery
 
 <!-- 공백 o = find('span') 어떤 요소의 하위 요소 중 특정 요소를 찾을 때 사용
