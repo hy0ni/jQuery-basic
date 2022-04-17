@@ -1,4 +1,4 @@
-######제이쿼리 기초문법
+제이쿼리 기초문법
 
 
 <div style="font-size:14px;background:#EFF5FB;padding:10px;border-radius:10px">
@@ -103,7 +103,7 @@ title: "구글로 이동"
 <br>
 
 
-###### Attribute 제어
+Attribute 제어
 
 
 ```jQery
@@ -134,7 +134,7 @@ $("#test").on({
 <br>
 
 
-######mouseover / mouseenter
+mouseover / mouseenter
 ```jquery
 //mouseover와 mouseenter 차이점
 mouseover : 직접 이벤트를 걸지 않은 자식요소에 마우스 포인터가 와도 발생.
@@ -152,7 +152,7 @@ mouseenter : 오로지 자기 자신에게 마우스 포인터가 진입해야 �
 <br>
 
 
-######width / height 
+width / height 
 
 
 ```jquery
@@ -171,7 +171,7 @@ outerHeight(true) : margin까지의 높이를 구함
 <br>
 
 
-######clone()
+clone()
 
 
 ```jquery
