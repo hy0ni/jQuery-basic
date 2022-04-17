@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>특정영역 이벤트</title>
+  <style>
+    *{margin:0;padding:0;}
+    a{text-decoration: none;}
+    .wrap{width:100%;height:100vh;}
+    .box1, .box2, .box3, .box4, .box5{
+      width:100%;height:500px;
+      background-color: rgb(253, 237, 237)
+    }
+    .box2{background-color: rgb(252, 220, 220);}
+    .box3{background-color: rgb(253, 174, 174);}
+    .box4{background-color: rgb(250, 118, 118);}
+    .box5{background-color: rgb(252, 79, 79);}
+
+    .button_01{
+      position: relative;
+      width:100%;height:80px;
+      text-align: center;
+      line-height: 80px;
+      margin-bottom: 50px;
+    }
+    
+    .btn_application{
+      position: fixed;
+      left:0;
+      bottom:0;
+      display: block;
+      width:100%;height:80px;
+      background-color: rgb(255, 179, 14);
+      color:rgb(255, 255, 255);
+      font-size: 20px;
+      font-weight: bold;      
+    }
+    .btn_application.on{
+      position: absolute;
+      left:0;
+      bottom:0;
+      display: block;
+      width:100%;height:80px;
+      background-color: rgb(255, 179, 14);
+      color:rgb(255, 255, 255);
+      font-size: 20px;
+      font-weight: bold;      
+    }
+    .btn_wrap{
+      width:100%;height:80px;
+      display: flex;
+      justify-content: space-evenly;
+    }
+    
+    .btn_visit{
+    width:40%;
+    height:50px;
+    border: none;
+    background-color: rgb(255, 128, 44);
+    color:aliceblue;
+    font-weight: 600;
+    font-size: 18px;
+    }
+    .btn_share{
+    width:40%;
+    height:50px;
+    border: none;
+    background-color: rgb(255, 128, 44);
+    color:aliceblue;
+    font-weight: 600;
+    font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+    
+    <div class="button_01">
+      <a class="btn_application" href="#">
+        신청서 작성하기
+      </a>
+
+    </div>
+
+    <div class="btn_wrap">
+      <button class="btn_visit">방문하기</button>
+      <button class="btn_share">공유하기</button>
+    </div>
+   
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+  $(function(){
+    
+   
+     $(window).scroll(function(){
+      var sTop = $(window).scrollTop();
+      //브라우저의 위에서 아래의 좌표값
+      var wH = $(window).height();
+
+      // if(sTop+wH/2 > $(".button_01").offset().top){
+      //   //브라우저의 스크롤탑값 + 브라우저 높이 만큼 > .button_01의 값을 지나친다면
+      //   $(".btn_application").addClass("on");
+      // }
+      $(".button_01").each(function(){//각각 선택해서 동작을 지정해주는 함수
+        if(sTop+wH > $(this).offset().top){
+          $('.btn_application').addClass("on");
+          $('.btn_wrap').css({opacity:'1'});
+        }else{
+          $('.btn_application').removeClass("on");
+          $('.btn_wrap').css({opacity:'0'});
+
+        }
+        //해당하는 button_01 .offset().top을 계산해서
+        //지나칠때 on클래스를 추가해줌.
+      });
+    });
+
+  });
+  </script>
+</body>
+</html>
