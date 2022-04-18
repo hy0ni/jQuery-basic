@@ -99,8 +99,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
   $(function(){
-    
-   
+     
      $(window).scroll(function(){
       var sTop = $(window).scrollTop();
       //브라우저의 위에서 아래의 좌표값
@@ -110,6 +109,7 @@
       //   //브라우저의 스크롤탑값 + 브라우저 높이 만큼 > .button_01의 값을 지나친다면
       //   $(".btn_application").addClass("on");
       // }
+
       $(".button_01").each(function(){//각각 선택해서 동작을 지정해주는 함수
         if(sTop+wH > $(this).offset().top){
           $('.btn_application').addClass("on");
@@ -123,7 +123,6 @@
         //지나칠때 on클래스를 추가해줌.
       });
     });
-
   });
   </script>
 </body>
