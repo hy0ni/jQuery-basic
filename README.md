@@ -23,9 +23,6 @@
 * [태그 스타일 수정하기](./javascript/20211227/study1.html)
 
 
-
-
-
 ## jquery
 * [제이쿼리 기초문법](./jQuery/basic.md)
 * [제이쿼리 기초](./javascript/20211227/study3.html)
@@ -38,12 +35,18 @@
 * [슬라이더 기능 구현](./jQuery/slider.md)
 * [append](./jQuery/append.html)
 * [appendTo](./jQuery/appendTo.html)
-* [animate](./jQuery/animate.md)
 * [자동반복함수 - setInterval](./jQuery/20211231/study1.html)
+* [animate함수](./jQuery/20220104/study1.html)
+* [animate](./jQuery/animate.md)
+* [페이지롤링](./jQuery/20220104/study2.html)
+* [마우스 따라다니는 태그](./jQuery/mousmove.md)
+* [scroll-each](./jQuery/20220110/study2.html)
+* [scroll-slide](./jQuery/scroll-slide.md)
 * [scrollTop&offset](./jQuery/scrollTop&offset.md)
 * [실행 시점 제어하기](./jQuery/event01.md)
 * [FAQ 토글 메뉴(아코디언)](./jQuery/accordion.md)
 * [서랍메뉴](./jQuery/drawer_navigation.md)
-* [특정영역 이벤트](./jQuery/event2.html)
  
+## css
+* [wave-text](./jQuery/20220107/study2.html)
 

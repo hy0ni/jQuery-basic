@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>페이지롤링</title>
+  <link rel="stylesheet" href="./css/study2.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    /* reset */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    /* layout */
+    #navigation {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 50px;
+      background: pink;
+    }
+
+    #navigation ul {
+      list-style: none;
+      width: 700px;
+      margin: 0 auto;
+      height: 100%;
+    }
+
+    #navigation ul li {
+      float: left;
+      width: 25%;
+      height: 100%;
+      line-height: 50px;
+      text-align: center;
+    }
+
+    #navigation ul:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    #wrap>div {
+      height: 1000px;
+    }
+
+    #SALMON {
+      background: salmon;
+    }
+
+    #ROYALBLUE {
+      background: royalblue;
+    }
+
+    #GOLD {
+      background: gold;
+    }
+
+    #BLACK {
+      background: black;
+    }
+
+    .info {
+      position: fixed;
+      left: 10px;
+      top: 60px;
+    }
+
+    .btn_top {
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      border: 1px solid lime;
+      color: lime;
+      padding: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <p class="info">현재스크롤 탑:<span class="scrl_value"></span></p>
+  <div id="navigation">
+    <ul>
+      <li><a href="#SALMON">SALMON</a></li>
+      <li><a href="#ROYALBLUE">ROYALBLUE</a></li>
+      <li><a href="#GOLD">GOLD</a></li>
+      <li><a href="#BLACK">BLACK</a></li>
+    </ul>
+  </div>
+  <div id="wrap">
+    <div id="SALMON"></div>
+    <div id="ROYALBLUE"></div>
+    <div id="GOLD"></div>
+    <div id="BLACK"></div>
+  </div>
+  <span class="btn_top">위로</span>
+
+  <script>
+    $(document).ready(function () {
+
+      // $("html,body").animate({scrollTop:1500},1000);
+      //scrollTop:1000 스크롤의 위치가 1000px만큼 이동(기본값0)
+
+      $("#navigation ul li a").click(function () {
+        var target = $(this).attr("href");
+        var obj_top = $(target).offset().top;
+        $("html,body").clearQueue().animate({ scrollTop: obj_top }, 1000);
+      });
+
+      // 위로 버튼을 눌렀을 때 가장 위로 스크롤바 이동할 수 있도록
+      $(".btn_top").click(function () {
+        $("html,body").clearQueue().animate({ scrollTop: 0 }, 1000);
+      });
+      //좌표구하는함수
+      // var result = $("#GOLD").offset().top;
+      // alert(result);
+
+      // 브라우저에서 스크롤바가 움직일 때 작동하는 함수
+      // 브라우저의 스크롤바의 위치에 따라서 동작을 구현할 수 있음
+      $(window).scroll(function () {
+        var currentTop = $(window).scrollTop();//body태그에 있는 스크롤바의 높이를 계산해주는 함수 (위에서 얼만큼 내려왔는지를 계산해줌)
+        $(".scrl_value").text(currentTop);
+        //스크롤바가 블랙영역에 도달한다면
+        //info글씨색이 lime색이 되도록 변경하고
+        //블랙영역이 아닌경우(그렇지않다면)는 다시 검정색의 글씨색이 되도록 코드를 작성해보세요.
+        if (currentTop >= 3000) {
+          $(".info").css("color", "lime");
+        } else {
+          $(".info").css("color", "black");
+        }
+      });
+
+      //마우스 휠 up/down 이벤트
+      $("#wrap > div").on("mousewheel", function (e) {
+        e.preventDefault();
+        var E = e.originalEvent;
+        delta = 0;
+        if (E.detail == true) {
+          //브라우저가 파이어폭스인 경우
+          delta = E.detail * -40;
+        } else {
+          //브라우저가 크롬 익스 오페라인 경우
+          delta = E.wheelDelta;
+        };//브라우저의 호환성 체크하는 부분
+
+        if (delta > 0) {
+          //마우스 휠을 올린경우 동작 입력
+          // alert("마우스 휠 올림");
+          var targetId = "#" + $(this).prev().attr("id");
+          var targetIdTop = $(targetId).offset().top;
+          $("html,body").clearQueue().animate({ scrollTop: targetIdTop }, 1000);
+        } else {
+          //마우스 휠을 내린경우 동작 입력
+          // alert("마우스 휠 내림");
+          var targetId = "#" + $(this).next().attr("id");
+          var targetIdTop = $(targetId).offset().top;
+          $("html,body").clearQueue().animate({ scrollTop: targetIdTop }, 1000);
+
+        }
+      });
+
+    });
+
+  </script>
+</body>
+
+</html>

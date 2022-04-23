@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>wave-text</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .contents {
+      text-align: center;
+      height: 100vh;
+      background: #232323;
+    }
+
+    .a {
+      border: 1px solid lime;
+      display: inline-block;
+      font-size: 170px;
+      font-weight: bold;
+      color: transparent;
+      -webkit-text-stroke: 1px aqua;
+      -ms-text-stroke: 1px aqua;
+      -moz-text-stroke: 1px aqua;
+      -o-text-stroke: 1px aqua;
+      -webkit-text-stroke: 1px aqua;
+      position: relative;
+      /* 비표준 css속성을 사용하는 경우css속성 앞에 벤더프리픽스를 기재한다.
+        마지막 css속성에 벤더프리픽스가 없는 표준css속성 입력방식으로 기재한다.*/
+    }
+
+    .a:after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      color: aqua;
+      animation: wave 3s linear 0s infinite alternate;
+    }
+
+    @keyframes wave {
+      0% {
+        clip-path: polygon(0 51%, 14% 49%, 30% 53%, 39% 61%, 52% 71%, 68% 66%, 76% 60%, 88% 57%, 98% 62%, 100% 67%, 100% 100%, 0 100%);
+      }
+
+      100% {
+        clip-path: polygon(0 80%, 11% 73%, 29% 72%, 44% 76%, 55% 63%, 67% 54%, 80% 52%, 94% 53%, 100% 57%, 100% 75%, 100% 100%, 0 100%);
+      }
+    }
+
+    /*
+    clip-path: polygon(0 51%, 14% 49%, 30% 53%, 39% 61%, 52% 71%, 68% 66%, 76% 60%, 88% 57%, 98% 62%, 100% 67%, 100% 100%, 0 100%);
+    clip-path: polygon(0 80%, 11% 73%, 29% 72%, 44% 76%, 55% 63%, 67% 54%, 80% 52%, 94% 53%, 100% 57%, 100% 75%, 100% 100%, 0 100%);
+      */
+  </style>
+</head>
+
+<body>
+  <div class="contents">
+    <p data-text="WELCOME" class="a">WELCOME</p>
+    <p data-text="HOMEPAGE" class="a">HOMEPAGE</p>
+  </div>
+</body>
+
+</html>
