@@ -49,4 +49,5 @@
  
 ## css
 * [wave-text](./jQuery/20220107/study2.html)
+* [text-line-animation](./jQuery/20220112/study2.html)
 

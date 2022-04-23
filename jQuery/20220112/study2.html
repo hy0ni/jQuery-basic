@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>text-line-animation</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* layout */
+    .textwrap {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .textwrap ul {
+      width: 200%;
+      display: flex;
+      /* 나란히 배치 */
+      border-top: 1px solid #aaa;
+      border-bottom: 1px solid #aaa;
+      overflow: hidden;
+    }
+
+    .textwrap ul li {
+      font-size: 80px;
+      text-transform: uppercase;
+      font-weight: bold;
+      white-space: nowrap;
+
+    }
+
+    .a {
+      color: #ddd;
+      animation: move1 20s linear -9s infinite;
+    }
+
+    .b {
+      color: #aaa;
+      animation: move2 20s linear 1s infinite;
+    }
+
+    .c {
+      color: transparent;
+      -webkit-text-stroke: 1px red;
+    }
+
+    @keyframes move1 {
+      0% {
+        transform: translateX(-100%);
+      }
+
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    @keyframes move2 {
+      0% {
+        transform: translateX(-200%);
+      }
+
+      100% {
+        transform: translateX(0%);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="textwrap">
+    <ul>
+      <li class="a">welcome in <span class="c">my name is jangjihyun</span>i'll do my best!</li>
+      <li class="b">welcome in <span class="c">my name is jangjihyun</span>i'll do my best!</li>
+    </ul>
+  </div>
+</body>
+
+</html>
