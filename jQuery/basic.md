@@ -87,7 +87,9 @@ $(".btns li").on("click",function(){
 ```
 
 
-```Jquery
+
+
+```J
 $(function(){
 
 $("#test".attr({
