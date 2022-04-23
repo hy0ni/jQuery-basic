@@ -16,7 +16,7 @@ jquery이벤트
   <li>스크롤 시점</li>
 </ul>
 
-```jquery
+```javascript
 
 //실행 지점 제어 - event종류 
   // mouseover 요소 위에 마우스가 올라왔을 때 
