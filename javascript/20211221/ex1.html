@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>조건문 예제</title>
+</head>
+
+<body>
+  <h1>문제</h1>
+  <p>사용자에게 이름과 국어점수 영어점수 수학점수를 물어보고 평균값을 계산하여
+    평균값이 90점 이상이라면 A등급
+    평균값이 80점 이상이라면 B등급
+    평균값이 70점 이상이라면 C등급
+    평균값이 60점 이상이라면 D등급
+    평균값이 60점 미만이라면 F등급이라고 알림창에 나타내보세요.
+    알림창 예시답안]땡땡땡님의 평균점수는 80점이며 B등급입니다.
+  </p>
+  <script>
+    var userName = prompt("당신의 이름을 알려주세요");
+    var scoreko = Number(prompt("당신의 국어점수를 알려주세요"));
+    var scoreEn = Number(prompt("당신의 영어점수를 알려주세요"));
+    var scoreMath = Number(prompt("당신의 수학점수를 알려주세요"));
+    var scoreAver = Math.round((scoreko + scoreEn + scoreMath) / 3);
+    if (scoreAver >= 90) {
+      document.write("<h2>" + userName + "님</h2>의 평균점수는 " + scoreAver + "점이며 A등급입니다.");
+    } else if (scoreAver >= 80) {
+      document.write(userName + "님의 평균점수는 " + scoreAver + "점이며 B등급입니다.");
+    } else if (scoreAver >= 70) {
+      document.write(userName + "님의 평균점수는 " + scoreAver + "점이며 C등급입니다.");
+    } else if (scoreAver >= 60) {
+      document.write(userName + "님의 평균점수는 " + scoreAver + "점이며 D등급입니다.");
+    } else {
+      document.write(userName + "님의 평균점수는 " + scoreAver + "점이며 F등급입니다.");
+    }
+    document.write("<h2>환영합니다.</h2>");
+  </script>
+</body>
+
+</html>

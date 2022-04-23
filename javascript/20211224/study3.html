@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>객체를 만들 수 있는 함수(생성자함수)</title>
+</head>
+
+<body>
+  <script>
+    // var person1 = {
+    //   name : "김과장",
+    //   gender : "남자",
+    //   character : "우유부단함",
+    //   age : 39,
+    //   sayHello : function(){
+    //     alert("안녕하세요! 저는 김과장입니다.");
+    //   }
+    // }
+    // var person2 = {
+    //     name : "이수나",
+    //     gender : "여자",
+    //     character : "성실함",
+    //     age : 23,
+    //     sayHello : function(){
+    //       alert("안녕하세요! 저는 이수나입니다.");
+    //   }
+    // }
+    // var person3 = {
+    //     name : "김혜원",
+    //     gender : "여자",
+    //     character : "소심함",
+    //     age : 22,
+    //     sayHello : function(){
+    //       alert("안녕하세요! 저는 김혜원입니다.");
+    //   }
+    // }
+    function person(username, usergender, userchar, userage) {
+      this.name = username;
+      this.gender = usergender;
+      this.character = userchar;
+      this.age = userage;
+      this.sayHello = function () {
+        document.write("안녕하세요! 저는 " + this.name + "입니다.<br>");
+      }
+    }
+
+    var person1 = new person("김과장", "남자", "우유부단함", 39);
+    var person2 = new person("이수나", "여자", "성실함", 23);
+    var person3 = new person("김혜원", "여자", "소심함", 22);
+    var person4 = new person("김유라", "여자", "구수해요", 23);
+    person1.sayHello();
+    person2.sayHello();
+    person3.sayHello();
+    person4.sayHello();
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>

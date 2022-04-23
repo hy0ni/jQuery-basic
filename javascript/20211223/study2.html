@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>객체의 활용</title>
+    <link rel="stylesheet" href="./css/study2.css">
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>내가 좋아하는 동물</h1>
+      <ul>
+        <script>
+
+        var animals = {
+          animal1:{
+            image:"cat.jpg",
+            type:"고양이",
+            nickname:"야옹이",
+            character:"게으르고 잠이 많음 개냥이"
+          },
+          animal2:{
+            image:"dog.jpg",
+            type:"강아지",
+            nickname:"퐁키",
+            character:"겁이 없고 물을 좋아함"
+          },
+          animal3:{
+            image:"elephants.jpg",
+            type:"코끼리",
+            nickname:"코둥이",
+            character:"겁이 많고 착함"
+          },
+          animal4:{
+            image:"Lion.jpg",
+            type:"사자",
+            nickname:"라이온킹",
+            character:"매우 빠르고 성격이 급함"
+          },
+          animal5:{
+            image:"penguins.jpg",
+            type:"펭귄",
+            nickname:"펭돌이",
+            character:"사고뭉치임 장난끼가 다분하고 생선을 좋아함"
+          },
+          animal6:{
+            image:"penguins.jpg",
+            type:"펭귄",
+            nickname:"펭이",
+            character:"얌전한 펭귄 생선을 좋아함"
+          }
+        };
+        // alert(animals.animal5.type);
+        for(var key in animals){
+        document.write("<li><img src='./img/"+animals[key].image+"' alt='"+animals[key].type+"'><h2>"+animals[key].type+"</h2><h3>"+animals[key].nickname+"</h3><p>"+animals[key].character+"</p></li>");
+        }
+        </script>
+        <!-- <li>
+          <img src='./img/cat.jpg' alt='고양이'>
+          <h2>고양이</h2>
+          <h3>야옹이</h3>
+          <p>게으르고 잠이 많음 개냥이</p>
+        </li>
+        <li>
+          <img src="./img/dog.jpg" alt="강아지">
+          <h2>강아지</h2>
+          <h3>퐁키</h3>
+          <p>겁이 없고 물을 좋아함</p>
+        </li>
+        <li>
+          <img src="./img/elephants.jpg" alt="코끼리">
+          <h2>코끼리</h2>
+          <h3>코둥이</h3>
+          <p>겁이 많고 착함</p>
+        </li>
+        <li>
+          <img src="./img/Lion.jpg" alt="사자">
+          <h2>사자</h2>
+          <h3>라이온킹</h3>
+          <p>매우 빠르고 성격이 급함</p>
+        </li>
+        <li>
+          <img src="./img/penguins.jpg" alt="펭귄">
+          <h2>펭귄</h2>
+          <h3>펭돌이</h3>
+          <p>사고뭉치임 장난끼가 다분하고 생선을 좋아함</p>
+        </li> -->
+      </ul>
+    </div>
+  </body>
+</html>

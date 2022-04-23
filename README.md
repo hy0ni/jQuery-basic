@@ -1,6 +1,31 @@
 # Today I Learned(TIL)
     공부한 내용 기록하기
-## jQuery
+
+## javascript
+* [평균구하기](./javascript/20211220/ex1.html)
+* [데이터형식(문자와 숫자)](./javascript/20211220/study1.html)
+* [변수/상수](./javascript/20211220/study2.html)
+* [참거짓 데이터 형태/boolean](./javascript/20211221/study1.html)
+* [조건문](./javascript/20211221/study2.html)
+* [조건문 예제](./javascript/20211221/ex1.html)
+* [배열 - array](./javascript/20211221/study3.html)
+* [객체 - object](./javascript/20211222/study1.html)
+* [반복문](./javascript/20211222/study2.html)
+* [반복문의 중첩](./javascript/20211222/study3.html)
+* [반복문의 활용](./javascript/20211222/study4.html)
+* [객체 반복문](./javascript/20211223/study1.html)
+* [객체의 활용](./javascript/20211223/study2.html)
+* [함수](./javascript/20211223/study3.html)
+* [함수의 활용](./javascript/20211224/study1.html)
+* [개체의 메소드](./javascript/20211224/study2.html)
+* [생성자 함수](./javascript/20211224/study3.html)
+* [생성자 함수의 활용](./javascript/20211224/study4.html)
+
+
+
+
+
+## jquery
 * [제이쿼리 기초문법](./jQuery/basic.md)
 * [append](./jQuery/append.html)
 * [appendTo](./jQuery/appendTo.html)

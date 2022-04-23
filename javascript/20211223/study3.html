@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>function - 함수</title>
+</head>
+
+<body>
+  <h1>함수</h1>
+  <p>동작을 수행하기 위한 자바스크립트상의 도구</p>
+  <p>function 함수명(재료){할일}</p>
+  <p>함수를 동작시킬때 재료부분은 반드시 입력할 필요X </p>
+  <p>함수안에서 return 구문을 사용하면 return 오른쪽의 값을 남기고 함수가 종료된다. return구문은 필요에따라서 작성할수도 안할수도 있다. </p>
+  <!-- // alert("TEST"); //표준내장함수 -->
+  <script>
+    //함수 생성한 부분(함수의 선언부 / 함수의 정의부)
+    // function myintroduce(){
+    //   alert("반갑습니다.");
+    // }
+    //사용자 정의 함수(내가만든 함수)
+
+    //함수의 실행 부분(함수의 실행부)
+    // myintroduce();
+
+    //설계도 재료주머니 재료(매개변수)
+    // function showNumber(a){
+    //   alert(a);
+    // }
+    // showNumber(5); // 재료주머니 안의 재료 (인자)
+
+    // function greet(name){
+    //   alert("안녕하세요"+name+"님 반갑습니다.");
+    // }
+    // greet("효니");
+
+    // function myplus(num1,num2){
+    //   document.write("<p>"+(num1+num2)+"</p>");
+    // }
+    // myplus(5,10);
+    // myplus(25,30);
+    //
+    // function myplus(num1,num2){
+    //   return num1+num2;
+    // alert("TEST");
+    // }
+    // alert(myplus(5,10));
+
+    // prompt("당신의 이름을 입력해주세요");
+
+    function showName(name) {
+      alert("당신의 이름은" + name + "이군요.");
+      return true;
+    }
+
+    var a = showName("효니");
+    alert(a);
+
+
+
+
+
+  </script>
+</body>
+
+</html>
