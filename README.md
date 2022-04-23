@@ -20,6 +20,7 @@
 * [개체의 메소드](./javascript/20211224/study2.html)
 * [생성자 함수](./javascript/20211224/study3.html)
 * [생성자 함수의 활용](./javascript/20211224/study4.html)
+* [태그 스타일 수정하기](./javascript/20211227/study1.html)
 
 
 
@@ -27,9 +28,18 @@
 
 ## jquery
 * [제이쿼리 기초문법](./jQuery/basic.md)
+* [제이쿼리 기초](./javascript/20211227/study3.html)
+* [제이쿼리 탐색](./javascript/20211227/study4.html)
+* [제이쿼리 탐색](./jQuery/20211228/study1.html)
+* [이벤트](./jQuery/20211228/study3.html)
+* [클릭 이벤트 활용](./jQuery/20211228/study4.html)
+* [this객체](./jQuery/20211229/study1.html)
+* [탭메뉴 구성](./jQuery/20211229/study2.html)
+* [슬라이더 기능 구현](./jQuery/slider.md)
 * [append](./jQuery/append.html)
 * [appendTo](./jQuery/appendTo.html)
 * [animate](./jQuery/animate.md)
+* [자동반복함수 - setInterval](./jQuery/20211231/study1.html)
 * [scrollTop&offset](./jQuery/scrollTop&offset.md)
 * [실행 시점 제어하기](./jQuery/event01.md)
 * [FAQ 토글 메뉴(아코디언)](./jQuery/accordion.md)

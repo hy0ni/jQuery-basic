@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>this객체</title>
+  <!-- jQuery 설치 CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    li {
+      cursor: pointer;
+    }
+
+    li.on {
+      color: red;
+    }
+
+    .textbox>section {
+      display: none;
+    }
+
+    .textbox>section.on {
+      background: orange;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="list">
+    <li>list1</li>
+    <li>list2</li>
+    <li>list3</li>
+    <li>list4</li>
+  </ul>
+  <div class="textbox">
+    <section>
+      <h2>title1</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+    <section>
+      <h2>title2</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+    <section>
+      <h2>title3</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+    <section>
+      <h2>title4</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </section>
+  </div>
+  <script>
+    $(document).ready(function () {
+
+      $(".list > li").click(function () { //선택한 대상들 중에서 내가 선택한 대상
+        $(".list > li").removeClass("on");
+        $(this).addClass("on");
+        var lid = $(this).index();
+        //index()앞에 선택된 대상이 몇번째 자식인지 계산해서 리턴하는 함수
+        // alert(lid);
+        //클릭한 리스트 순번에 맞는 섹션태그가 활성화 되도록 코드를 만들어보세요.
+        $(".textbox > section").removeClass("on");
+        $(".textbox > section").eq(lid).addClass("on");
+      });
+
+    });
+  </script>
+</body>
+
+</html>

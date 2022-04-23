@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>제이쿼리 탐색</title>
+  <!-- jQuery 설치 CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    ul li {
+      transition: all 1s ease 0s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <h1>탐색선택자</h1>
+    <h2>html</h2>
+    <ul id="list1">
+      <li>list1</li>
+      <li>list2<span>2021-12-27</span></li>
+      <li>list3</li>
+      <li>list4</li>
+      <li>list5</li>
+    </ul>
+  </div>
+  <script>
+    $(document).ready(function () {
+
+      // var index = Number(prompt("몇 번째 리스트를 활성화하시겠습니까?"));
+
+      // $("#list1 > li:nth-of-type("+index+")").css("color","red");
+      // $("#list1 > li").eq(index-1).css("font-size","2em").css("color","blue");
+
+      $("#list1").find("span").css("color", "aqua"); //.find 자손중에서
+      $("#list1").append("<li>리스트6</li>");
+      //선택된 태그에 마지막 위치에 새로운 자식을 추가시켜주는 함수
+      $("#list1").prepend("<li>리스트0</li>");
+      //선택된 태그에 가장 첫번째 위치에 새로운 자식을 추가시켜주는 함수
+      //
+      // $("<li>이전추가</li>").insertBefore($("#list1 li").eq(2));
+      // $("<li>이후추가</li>").insertAfter($("#list1 li").eq(4));
+      //별로안씀
+
+      // var title = $(".wrap h1").text();
+      // 1.(재료를 입력하지 않은 경우)선택된 태그의 내용을 가져오는 함수
+      // 2.(재료를 입력한 경우)선택된 태그의 내용을 입력한 재료로 변경해주는 함수
+      $(".wrap h1").text("<a href='#'>탐색선택자eq함수</a>");
+
+      $(".wrap h2").html("<a href='#'>html조작</a>");
+      // html태그는 태그의 내용을 재료로 입력할때 태그형태를 갖춘 데이터라면 실제로
+      // 태그를 생성해냄
+    });
+
+//콜백함수
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>자동반복함수 - setInterval</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./js/study1.js"></script>
+</head>
+
+<body>
+  <h1>setInterval함수</h1>
+  <p>setInterval 함수는 일정한 동작을 일정한 시간마다 반복해주는 함수</p>
+  <p>타이머를 return한다.</p>
+  <p>setInterval 이라는 함수-> setInterval(,); 첫번째 재료는 동작할 함수, 두번째 재료는 반복할 일정한 주기(시간 1000==1초)를 재료로 합니다.</p>
+  <div class="second">지금 로그인한지 0초 지났습니다.</div>
+  <script>
+    $(document).ready(function () {
+
+      var a = 0;
+      var timer = setInterval(function () {
+        //1초마다 실행되는 동작
+        a++
+        $(".second").text("지금 로그인한지 " + a + "초 지났습니다.");
+      }, 1000);
+
+      // clearInterval(timer);
+      $(".second").mouseover(function () {
+        clearInterval(timer);
+      });
+      //마우스를 올렸을때 멈춰라
+
+    });
+
+  </script>
+</body>
+
+</html>

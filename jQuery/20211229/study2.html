@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>탭메뉴 구성</title>
+  <link rel="stylesheet" href="./css/study2.css">
+  <!-- jQuery 설치 CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    /* reset */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* layout */
+    .tabMenu {
+      border: 1px solid red;
+      width: 400px;
+      height: 300px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .tabMenu>dt {
+      float: left;
+      border: 1px solid black;
+      padding: 10px 15px;
+      transition: all 0.5s ease 0s;
+    }
+
+    .tabMenu>dt.on {
+      border: 1px solid orange;
+      background: orange;
+      color: #fff;
+    }
+
+    .tabMenu>dd {
+      position: absolute;
+      left: 0;
+      top: 45px;
+      border: 1px solid pink;
+      opacity: 0;
+      transition: all 0.5s ease 0s;
+    }
+
+    .tabMenu>dd.on {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <dl class="tabMenu">
+    <dt class="on">탭제목1</dt>
+    <dd class="on">
+      <h2>탭제목1대한 내용들</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </dd>
+    <dt>탭제목2</dt>
+    <dd>
+      <h2>탭제목2대한 내용들</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </dd>
+    <dt>탭제목3</dt>
+    <dd>
+      <h2>탭제목3대한 내용들</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </dd>
+  </dl>
+  <script>
+    $(document).ready(function () {
+
+      $(".tabMenu > dt").click(function () {
+        $(".tabMenu > dt").removeClass("on");
+        $(this).addClass("on");
+        $(".tabMenu > dd").removeClass("on")
+        $(this).next().addClass("on");
+
+      });
+
+    });
+  </script>
+</body>
+
+</html>

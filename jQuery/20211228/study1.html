@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>제이쿼리 - 속성변경/추가</title>
+  <!-- jQuery 설치 CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <h1 class='a'>삭제될태그</h1>
+  <div class="wrap"></div>
+  <img class="b" src="./img/animal.jpg" alt="강아지이미지">
+  <script>
+    $(document).ready(function () {
+      $(".a").remove();
+      //해당하는 선택된 태그를 삭제해주는 함수
+      $("<h1>title</h1>").appendTo(".wrap");
+      // 태그를 추가해주는 함수 생성한 후 추가를 시켜줘야 함.(자식이 부모에 추가가 되어야할 경우)
+      $(".wrap").append("<h1>title2</h1>");
+      //부모기준으로 자식이 추가되어야 할 경우(마지막 자식)
+      // var b = $(".b").attr("src");
+      // $(".b").attr("src","img.jpg");
+      //attr함수: body태그안에 있는 모든 속성을 조회/변경 가능함
+      // 1. 재료가 1개일때는 선택된 태그의 속성에 저장되어있는 속성값을 불러옴
+      // 2. 재료가 2개일때는 선택된 태그의 속성에 두번째 재료를 속성값으로 저장함
+      $(".b").attr("alt", "귀여운강아지이미지");
+      var text = "가나다라마바사";
+      text = text.replace("사", "아");
+      // alert(text);
+      var b = $(".b").attr("src");
+      // alert(b);
+      var c = b.replace(".jpg", "_on.jpg");
+      alert(c);
+      $(".b").attr("src", c);
+    });
+
+  </script>
+</body>
+
+</html>
