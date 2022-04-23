@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>평균구하기</title>
+</head>
+
+<body>
+  <h1>문제1</h1>
+  <p>사용자에게 이름과 국어점수 수학점수 영어점수를 물어본 뒤
+    평균값을 계산해서 알림창을 통해 보여주시오.</p>
+  <p>예시답안]정현진님의 평균점수는 80점 입니다.</p>
+  <p>단 평균점수는 소수점을 올림해서 계산하시오</p>
+  <script>
+    var userName = prompt("당신의 이름을 입력해주세요.");
+    var scoreKo = Number(prompt("당신의 국어점수를 입력해주세요."));
+    var scoreEn = Number(prompt("당신의 영어점수를 입력해주세요.")); // 오른쪽 계산을 마친뒤 왼쪽에 대입 (안쪽에서 바깥쪽으로 계산됨.)
+    var scoreMath = Number(prompt("당신의 수학점수를 입력해주세요."));
+    var scoreAver = Math.ceil((scoreKo + scoreEn + scoreMath) / 3);
+    alert(userName + "님의 평균점수는 " + scoreAver + "점입니다.") // 문자데이터로 바뀌어서 이어짐.
+    // alert(userName+"님의 평균점수는"+Math.ceil((Number(scoreKo)+Number(b)+Number(c))/3)+"점 입니다.")
+  </script>
+
+  <!-- <script>
+    var userName = prompt('당신의 이름을 입력해주세요');
+    var math = Number(prompt('당신의 국어점수를 입력해주세요'));
+    var korean = Number(prompt('당신의 국어점수를 입력해주세요'));
+    var english = Number(prompt('당신의 국어점수를 입력해주세요'));
+    var sum = ((math + korean + english) / 3);
+
+    alert('<h1>' + userName + '님의 평균점수는' + sum + '점 입니다.</h1>');
+
+  </script> -->
+</body>
+
+</html>
