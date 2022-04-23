@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>svg-animation</title>
+    <style>
+      body{width:100%;height:100%}
+      *{margin:0;padding:0;}
+      svg{border:1px solid red;}
+      svg text{
+        transition:all 1s linear 0s;
+        font-size:4em;
+      font-family:Dotum;
+      fill:transparent;
+      stroke:blue;
+      stroke-dasharray:500px;
+      stroke-dashoffset:500px;
+      animation:intro 2s linear 0s;
+    }
+    /* svg text:hover{
+      stroke-dashoffset:0px;
+    } */
+    @keyframes intro {
+      0%{stroke-dashoffset:500px;}
+      100%{stroke-dashoffset:0px;}
+    }
+    </style>
+  </head>
+  <body>
+    <svg width="500" height="400" viewBox="0 0 500 100">
+      <!-- 보여지는 영역 viewBox="왼쪽 상단좌표 외른쪽 아래좌표" -->
+      <text>WELCOME</text>
+    </svg>
+  </body>
+</html>

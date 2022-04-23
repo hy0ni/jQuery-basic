@@ -50,4 +50,6 @@
 ## css
 * [wave-text](./jQuery/20220107/study2.html)
 * [text-line-animation](./jQuery/20220112/study2.html)
+* [clip-path](./jQuery/20220114/study1.html)
+* [svg-animation](./jQuery/20220114/study2.html)
 
