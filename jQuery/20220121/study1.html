@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>progress effect</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .progress_bar {
+      width: 500px;
+      height: 50px;
+      background: gray;
+      position: relative;
+    }
+
+    .current {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0;
+      height: 100%;
+      background: aqua;
+      transition: all 1s ease 0s;
+    }
+
+    .current span {
+      line-height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>line-progress</h1>
+  <div class="progress_bar">
+    <div class="current cur1">
+      <span>80</span>
+    </div>
+  </div>
+  <div class="progress_bar">
+    <div class="current cur2">
+      <span>67</span>
+    </div>
+  </div>
+  <div class="progress_bar">
+    <div class="current cur3">
+      <span>97</span>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function () {
+
+      function progressMe(classname) {
+        var num = 0;
+        var percent = Number($("." + classname + " > span").text());
+        var timer = setInterval(function () {
+          if (num < percent) {
+            num++;
+            $("." + classname + " > span").text(num + "%");
+            $("." + classname).css("width", percent + "%");
+          } else {
+            clearInterval(timer);
+          }
+        }, 10);
+
+      }
+
+      progressMe("cur1");
+      progressMe("cur2");
+      progressMe("cur3");
+
+    });
+
+  </script>
+</body>
+
+</html>
