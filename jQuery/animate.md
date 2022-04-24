@@ -66,7 +66,7 @@ body{background-color: cadetblue;}
 <br>
 
 
-```jquery
+```javascript
 
 <!-- 공백 o = find('span') 어떤 요소의 하위 요소 중 특정 요소를 찾을 때 사용
 공백 x = filter(선택자) 선택한 요소에서 선택자, 변수, 함수를 통해 선택하는 메서드 -->
