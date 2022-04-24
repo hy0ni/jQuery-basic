@@ -50,6 +50,7 @@
 * [표준객체](./jQuery/20220124/study1.html)
 * [circle-text-progress](./jQuery/chart.md)
 * [line-progress](./jQuery/20220121/study1.html)
+* [svg-circle animation](./jQuery/20220121/study3.html)
  
 ## css
 * [wave-text](./jQuery/20220107/study2.html)
