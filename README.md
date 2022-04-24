@@ -48,6 +48,7 @@
 * [서랍메뉴](./jQuery/drawer_navigation.md)
 * [header-style](./jQuery/header.md)
 * [표준객체](./jQuery/20220124/study1.html)
+* [circle-text-progress](./jQuery/chart.md)
  
 ## css
 * [wave-text](./jQuery/20220107/study2.html)
