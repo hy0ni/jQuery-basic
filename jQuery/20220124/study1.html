@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>표준 객체</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/study1.js"></script>
+    <script>
+      var person = {
+        name:"장지현",
+        gender:"여자",
+        greet:function(){
+          alert("안녕하세요!");
+        }
+      };
+      $(document).ready(function(){
+        $(".a").click(function(){
+          //a라는 클래스를 클릭했을 때 작동되는 코드
+          location.href = "http://www.naver.com";
+
+        });
+        $(".b").click(function(){
+          location.reload();//새로고침이 되는 함수
+        });
+
+        $(".c").click(function(){
+          window.open("../nagaza/login1.html","팝업타이틀","width=360,height=640,resizable=no");
+        });
+
+      });
+
+    </script>
+  </head>
+  <body>
+    <h1>표준객체 - 브라우저에 설치되어있는 기본 객체</h1>
+    <p>바자스크립트는 객체지향(함수지향)언어 브라우저의 모든 것이 객체!</p>
+    <ul>
+      <li>window - 최상위 객체, 새창을 생성하는 역할</li>
+      <li>document - 문서객체</li>
+      <li>navigator - 브라우저에 대한 정보를 제공하는 객체</li>
+      <li>location - 위치(url)관련 정보를 제공하는 객체</li>
+      <li>screen - 스크린(모니터)에 대한 정보를 제공하는 객체</li>
+      <li>history - 인터넷 방문기록에 대한 정보를 제공하는 객체</li>
+    </ul>
+    <span class="a">네이버로바로가기</span>
+    <span class="b">새로고침!</span>
+    <span class="c">앱화면 바로가기</span>
+  </body>
+</html>
