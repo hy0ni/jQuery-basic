@@ -9,7 +9,7 @@ $(function(){
     1.$(window)
     2.$("body")
     3. "resize"
-    */
+   
 
     $(window).on("resize", function () {
         var wid = $(this).width();
@@ -24,7 +24,6 @@ $(function(){
             $("body").css({ backgroundColor: "violet" });
         }
     })
-
 });
 
 ```
