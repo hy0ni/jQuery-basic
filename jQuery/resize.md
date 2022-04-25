@@ -6,9 +6,9 @@ $(function(){
     - 만약 브라우저 폭이 540보다 같거나 크고 1180보다 작으면 배경색을 pink로 적용
     - 1180보다 같거나 크면 배경색을 voilet적용
 
-    1.$(window)
-    2.$("body")
-    3. "resize"
+  //  1.$(window)
+   // 2.$("body")
+    // 3. "resize"
    
 
     $(window).on("resize", function () {
