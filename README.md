@@ -54,6 +54,7 @@
 * [circle-text-progress](./jQuery/chart.md)
 * [line-progress](./jQuery/20220121/study1.html)
 * [svg-circle animation](./jQuery/20220121/study3.html)
+* [resize](./jQuery/resize.md)
  
 ## css
 * [wave-text](./jQuery/20220107/study2.html)
