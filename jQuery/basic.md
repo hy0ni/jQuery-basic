@@ -36,7 +36,6 @@ $(".btns li").on("click",function(){
 $(".btns li").on("click",function(){
   //.btns li click했을때 동작
 	//.btns li의 직계 자식중 모든 a의 color를 black로 변경
-  
 	$(".btns li").children("a").css({"color":"black"});
 	//내가 선택한 직계 자식중 a의 color를 red로 변경
 	$(this).children("a").css({"color":"red"});
