@@ -27,7 +27,7 @@
 * [제이쿼리 기초문법](./jQuery/basic.md)
 * [제이쿼리 기초](./javascript/20211227/study3.html)
 * [제이쿼리 탐색](./javascript/20211227/study4.html)
-* [제이쿼리 탐색](./jQuery/20211228/study1.html)
+* [제이쿼리 - 속성변경/추가](./jQuery/20211228/study1.html)
 * [이벤트](./jQuery/20211228/study3.html)
 * [setTimeout](./jQuery/setTimeout.md)
 * [클릭 이벤트 활용](./jQuery/20211228/study4.html)
