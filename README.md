@@ -18,6 +18,7 @@
 * [함수](./javascript/20211223/study3.html)
 * [함수의 활용](./javascript/20211224/study1.html)
 * [개체의 메소드](./javascript/20211224/study2.html)
+* [생성자 함수](./javascript/function.md)
 * [생성자 함수](./javascript/20211224/study3.html)
 * [생성자 함수의 활용](./javascript/20211224/study4.html)
 * [태그 스타일 수정하기](./javascript/20211227/study1.html)
