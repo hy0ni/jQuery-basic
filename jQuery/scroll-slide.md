@@ -507,7 +507,7 @@ body {
 ```
 
 
-```javacsript
+```javascript
 $(document).ready(function(){// $(function(){});축약형
 
   //gnb리스트 클릭 시 train 이동
