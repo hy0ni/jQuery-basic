@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>리사이즈</title>
+  <style>
+    .box1 {
+      width: 100%;
+      height: 100vh;
+      border: 2px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1">
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // .outerWidth() 메서드는 선택한 요소의 가로 값을 가져옵니다.
+      // .outerWidth(true) 메서드는 선택한 요소에 가로 값(마진포함)을 가져옵니다.
+      // .outerWidth("속성") 메서드는 선택한 요소의 가로 값을 변경합니다.
+      // .outerWidth(함수) 메서드는 선택한 요소의 함수를 이용하여 가로 값을 설정합니다.
+
+      var result = $('.box1').width();
+      // var result = $('.box1').outerWidth();
+      console.log(result);
+
+
+      /*미션 1 : 
+    - 브라우저를 리사이즈할 떄마다 현재 브라우저의 넓이값을 구해서
+    - 만약 브라우저 폭이 540보다 작아지면 body의 배경색을 orange로 적용
+    - 만약 브라우저 폭이 540보다 같거나 크고 1180보다 작으면 배경색을 pink로 적용
+    - 1180보다 같거나 크면 배경색을 voilet적용 */
+
+      $(window).resize(function () {
+        $window = $(this).width();
+        if ($window < 540) {
+          $('body').css({ backgroundColor: 'orange' });
+        }
+        if ($window >= 540 && $window < 1180) {
+          $('body').css({ backgroundColor: 'pink' });
+        }
+        if ($window >= 1180) {
+          $('body').css({ backgroundColor: 'violet' });
+        }
+
+
+      });
+
+
+
+    });
+  </script>
+</body>
+
+</html>

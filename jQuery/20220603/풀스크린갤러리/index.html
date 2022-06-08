@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>fullscreen-gallery</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/custom.js"></script>
+</head>
+
+<body>
+  <!-- <div class="intro"></div> -->
+  <section id="gallery">
+    <h1>INNOVATION</h1>
+    <article class="showBox">
+    </article>
+
+    <article class="controls">
+      <ul class="btns">
+        <li><a href="img/pic1.jpg">INNOVATION</a></li>
+        <li><a href="img/pic2.jpg">BRAND IDENTITY</a></li>
+        <li><a href="img/pic3.jpg">INVESTMENT</a></li>
+        <li><a href="img/pic4.jpg">BRAND NEW</a></li>
+      </ul>
+
+      <div>
+        <strong>1</strong> / <span>4</span>
+      </div>
+    </article>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    /*
+  미션2
+  1.controls안에 span에는 현재 이미지의 전체 갯수를 스크립트로 적용하고
+  2.strong안에는 버튼을 클릭할 때마다 현재 이미지의 순번을 출력
+  3.btns li의 a태그는 현재 클릭한 버튼만 글자색으로 흰색으로 활성화
+  4.나머지버튼들은 원래 색상으로 비활성화 유지
+  */
+
+    // setTimeout(function () {
+    //   $('.intro').css({ top: '-120%' });
+    // }, 1000);
+    var len = $("#gallery .btns li").length; // 
+    $("#gallery .controls div span").text(len);
+
+    $("#gallery .btns li a").on("click focusin", function (e) {
+      e.preventDefault();
+      var imgSrc = $(this).attr("href");
+      var i = $(this).parent().index() + 1;
+      var txt = $(this).text();
+
+      $("#gallery h1").text(txt);
+
+      $("#gallery .showBox").css({ backgroundImage: "url(" + imgSrc + ")" });
+      $("#gallery .controls div strong").text(i);
+
+      $("#gallery .controls .btns li a").css({ color: "#999" });
+      $(this).css({ color: "#fff" });
+    });
+  </script>
+</body>
+
+</html>

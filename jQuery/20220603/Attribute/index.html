@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attribute제어</title>
+</head>
+
+<body>
+  <a href="http://www.naver.com" target="_blank" title="네이버로 이동" id="test">네이버</a>
+  <section id="test"></section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // 선택자.attr({'변경할속성명':'속성값'}) : 해당 속성명에 해당하는 값을 변경
+      // 선택자.attr('알아낼 속성명') : 해당 속성명의 값을 알아냄
+      // 선택자.text() : 선택자에 텍스트값 가져오기
+      // 선택자.text('바꿀 텍스트') : 선택자에 텍스트값 변경하기
+      $('#test').attr({
+        href: "https://www.nate.com",
+        target: '_self',
+        title: '네이트로 이동'
+      }).text('네이트')
+
+      /*
+     미션2
+     1. test 클릭 시 기본 링크 이동을 막음
+     2. 해당 요소인 a태그의 href값을 구해서 변수에 저장
+     4. 해당 href태그의 src값을 구해서 찾은 변수로 변경*/
+
+      // 이벤트 연결 메서드 .on
+      // 하나의 DOM에 여ㅓ개의 이벤트 등록이 필요한데 실행할 함수가 같을때
+      // 선택자.on('이벤트명1,이벤트명2',함수);
+
+      $('#test').on({
+        'click': function () {
+          console.log('클릭했습니다.')
+        },
+        'mouseenter': function () {
+          console.log('마우스가 들어갔습니다.');
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>
