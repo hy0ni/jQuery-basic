@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>객체 예제</title>
+</head>
+
+<body>
+
+  <h1>안녕하세요</h1>
+  <script>
+    document.addEventListener("click", function (ev) {
+      if (ev.target == document.getElementsByTagName("h1")[0]) {
+        ev.target.setAttribute("data-name", "김자영");
+      }
+    });
+  </script>
+  <script>
+    /*
+    var obj = {"name":"효니", "job":"퍼블리셔", "outfit":"예쁨"};
+    for( var idx in obj ) {
+      console.log( idx + ":" + obj[idx] );
+    }
+    */
+
+    /*
+    var obj = {
+      "idx1": 10,
+      "idx2": "효니",
+      "idx3": undefined,
+      "idx4": true,
+      "idx5": [1, 2, 3, 4],
+      "idx6": function() {
+        console.log("효니님 메롱~!");
+        console.log( this ); // 이 메써드를 소유하고 있는 객체, 즉, obj 객체
+      }
+    };
+    obj.idx6();
+
+
+    function fn() {
+      console.log( this ); // 전역 컨텍스트 객체 (= window객체)
+    }
+    // 함수도 일종의 객체다. 그래서 키가 있다. 키중에는 이러한 것들이 있다.
+    fn["prototype"]; // 객체
+    fn["call"]; // 함수
+    fn["apply"]; // 함수
+    fn["bind"]; // 함수
+    // 함수는 일종의 객체이기도 하지만, 자체적으로 코드를 담고있는 코드의 모음이기도 해서, 그냥 호출도 가능하다.
+    fn();
+
+
+    function Person( name, age, sex, job, hello ) {
+      this["name"] = name;
+      this["age"] = age;
+      this.sex = sex;
+      this.job = job;
+      this.hello = hello;
+    }
+    Person.prototype.sayHello = function( a ) {
+      console.log( this.name+": "+this.hello+" ("+a+")" );
+    }
+    var p1 = new Person("홍길동", 341, "남성", "도둑놈", "거 반갑수다");
+    var p2 = new Person("효니", 34, "여성", "퍼블리셔", "안녕하세요?");
+    var p3 = new Person("김영희", 18, "여성", "고등학생", "안뇽하세용~");
+    console.log( p1 );
+    console.log( p2 );
+    console.log( p3 );
+    p1["sayHello"]( 1 );
+    p2.sayHello( 2 );
+    p3.sayHello( 3 );
+    */
+
+
+    /*
+    var obj = {};
+    console.log( obj );
+    console.log( obj.a ); // undefined
+    console.log( obj.toString() ); // 객체에는 없는 키지만, 객체의 __proto__안에 키가 있으니까, 마치 객체가 원래 그 키를 갖고 있던것 마냥 사용할 수 있다.
+    console.log( obj.valueOf() ); // 객체에는 없는 키지만, 객체의 __proto__안에 키가 있으니까, 마치 객체가 원래 그 키를 갖고 있던것 마냥 사용할 수 있다.
+    //console.log( obj.b() ); // undefined is not a function
+    // console.log( obj.toString() ); // obj.toString is not a function
+    */
+
+
+
+    function Person(name, age, sex, job, hello) {
+      this["name"] = name;
+      this["age"] = age;
+      this.sex = sex;
+      this.job = job;
+      this.hello = hello;
+      // ...
+    }
+    Person.prototype.sayHello = function (a) {
+      console.log(this.name + ": " + this.hello + " (" + a + ")");
+    }
+    function Student(p, schoolNumber) {
+      this.__proto__ = p;
+      this["schoolNumber"] = schoolNumber;
+    }
+    function ColleageStudent(s, major) {
+      this.__proto__ = s;
+      this["major"] = major;
+    }
+    var p1 = new Person("김영희", 18, "여성", "고등학생", "안뇽하세용~");
+    var s1 = new Student(p1, "202001923");
+    var c1 = new ColleageStudent(s1, "컴퓨터공학");
+    console.log(c1);
+    console.log(c1.name);
+    c1.sayHello(1);
+  </script>
+</body>
+
+</html>
