@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>배열 예제</title>
+</head>
+
+<body>
+  <script>
+    /*
+    var str = prompt("계산할 수식을 입력하세요.");
+    var opPos, op;
+    // 연산자의 위치를 찾는다.
+    opPos = str.indexOf("+");
+    if(opPos==-1) opPos = str.indexOf("-");
+    if(opPos==-1) opPos = str.indexOf("*");
+    if(opPos==-1) opPos = str.indexOf("/");
+    // 연산자를 찾는다.
+    op = str.substr(opPos, 1);
+    // 앞숫자와 뒷숫자를 찾는다.
+    var num1, num2;
+    num1 = parseInt(str.substr(0, opPos));
+    num2 = parseInt(str.slice(opPos+1));
+    // 연산자에 따라서 계산을 수행한다.
+    switch( op ) {
+    case "+":
+      console.log( num1+" + "+num2+" = "+(num1+num2) );
+      break;
+    case "-":
+      console.log( num1+" - "+num2+" = "+(num1-num2) );
+      break;
+    case "*":
+      console.log( num1+" * "+num2+" = "+(num1*num2) );
+      break;
+    case "/":
+      console.log( num1+" / "+num2+" = "+(num1/num2) );
+      break;
+    }
+    */
+
+
+    /*
+    var num = prompt("콤마를 찍어 출력할 숫자를 입력하세요.");
+    var result = "", count = 0;
+    for(var i=num.length-1; i>=0; i-=1) {
+      result = num.substr(i,1) + result;
+      count += 1;
+      if( count % 3 == 0 && i!=0 ) {
+        result = "," + result;
+      }
+    }
+    console.log( result );
+    */
+
+
+    /*
+    var k;
+    do {
+      k = prompt("별을 출력할 행 수를 입력하세요.");
+    } while( isNaN(parseInt(k)) || parseInt(k)<=0 );
+    for(var i=0; i<k; i+=1) {
+      var str = "";
+      // 앞공백
+      for(var n=0; n<(k-i-1); n+=1) {
+        str += " ";
+      }
+      // 별
+      str += "*";
+      // 중간공백
+      for(var n=0; n<(i*2-1); n+=1) {
+        str += " ";
+      }
+      // 별
+      if(i) {
+        str += "*";
+      }
+      console.log( str );
+    }
+    */
+
+
+
+    /*
+    var arr = [1, 2, 3, 4, 5];
+    arr[5] = "효니";
+    arr[6] = true;
+    arr[7] = undefined;
+    arr[80] = "자바스크립트";
+    console.log( arr );
+    */
+
+
+    /*
+    var fruits = ["딸기", "수박", "귤", "오렌지", "당근", "오이", "양파", "배", "사과", "포도", "망고"];
+    var vegitables = fruits.splice( 4, 3 );
+    console.log( fruits );
+    console.log( vegitables );
+    */
+
+
+
+    /*
+    var a = 5;
+    var b = a;
+    a++;
+    console.log( b ); // 값복사 현상
+    */
+
+    /*
+    var arr1 = [1, 2, 3, 4, 5];
+    var arr2 = arr1;
+    arr1.push(6);
+    console.log( arr2 ); // 참조복사 현상
+    */
+
+
+    // 참조타입 데이터를 참조복사하지 않고 값복사하는 경우
+    /*
+    var arr1 = [1, 2, 3, 4, 5];
+    var arr2 = [];
+    for(var i=0; i<arr1.length; i+=1) {
+      arr2.push( arr1[i] );
+    }
+    arr1.push(6);
+    console.log( arr2 );
+    */
+
+
+    var arr1 = [1, 2, 3, 4, 5];
+    var arr2 = [...arr1]; // 스프레드 연산자에 의한 값복사
+    arr1.push(6);
+    console.log(arr2);
+  </script>
+</body>
+
+</html>
