@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>함수 예제</title>
+</head>
+
+<body>
+  <script>
+    /*
+    function sayHello() {
+      console.log( "안녕하세요" );
+    }
+    sayHello();
+
+    function sum1( num1, num2, num3 ) {
+      console.log( num1+num2+num3 );
+    }
+    sum1( 5, 10, 20 );
+
+    function sum2( n1, n2, n3 ) {
+      return n1+n2+n3;
+    }
+    var result = sum2( 10, 30, 60 );
+    console.log( result );
+    */
+
+    /*
+    var r = 100;
+    function fn() {
+      var r = 1;
+      console.log( r ); // 1
+    }
+    fn();
+    console.log( r );
+    */
+
+
+    /*
+    console.log( "1" );
+    console.log( "2", "3" );
+    console.log( 1, 2, 3, 4, 5 );
+    */
+
+
+    /*
+    function sum3() {
+      var result = 0;
+      for(var i=0; i<arguments.length; i+=1) {
+        result += arguments[i];
+      }
+      return result;
+    }
+    var result = sum3( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 );
+    console.log( result );
+    */
+
+
+    var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    /*
+    arr.forEach( function(el,idx) {
+      console.log( idx+"번 인덱스에는 "+el+" 이 들어있다." );
+    } );
+    */
+    /*
+    var odds = arr.filter( function(el,idx) {
+      if( el % 2 == 0 ) {
+        return true;
+      } else {
+        return false;
+      }
+    });
+    console.log( odds );
+    */
+    /*
+    var newArray = arr.map( function(el,idx) {
+      var str = "";
+      for(var i=0; i<el; i+=1) {
+        str += "*";
+      }
+      return str;
+    });
+    console.log( newArray );
+    */
+
+    /*
+    function fn() {
+      return function() {
+        console.log( "안녕하세요~~" );
+      }
+    }
+    var r = fn();
+    r();
+    */
+
+
+    /*
+    function getPoint() {
+      var point = 70;
+      return function() {
+        console.log( "당신의 점수는 "+point+"점 입니다." );
+      }
+    }
+    var printPoint = getPoint();
+    printPoint();
+    */
+
+
+    function fn(n) {
+      console.log(n);
+      if (n > 0)
+        fn(n - 1);
+      console.log(n);
+    }
+
+    fn(2);
+  </script>
+</body>
+
+</html>

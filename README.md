@@ -29,6 +29,7 @@
 * [String타입/undefined타입](./javascript/String_type/string_type.html)
 * [Boolean타입,흐름제어,조건문,반복문](./javascript/Boolean/boolean.html)
 * [배열(array),배열 조작,참조 복사,스프레드,다차원 배열](./javascript/Array/array.html)
+* [함수(function)/변수 유효범위/가변인자함수/익명함수/배열순회/재귀함수](./javascript/Function/function.html)
 
 ## jquery
 * [제이쿼리 기초문법](./jQuery/basic.md)

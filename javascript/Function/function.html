@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수(function)</title>
+</head>
+
+<body>
+  <script>
+    /*
+    - 함수 (= Function)
+    함수는 실행 가능한 코드의 모음이다.
+    컴퓨터가 수행할 수 있는 기본기능들을 조합해서 새로운 기능을 만드는 수단.
+  
+    a) 함수는 호출(=call)되어야만 실행된다.
+    b) 함수를 여러번 호출하면 동일한 코드를 여러번 실행할 수 있다. (= 코드를 재사용)
+    c) 함수는 호출될때마다 매번 새로운 실행흐름을 만든다.
+    d) 함수를 호출할 때, 함수 내부에서 필요한 데이터를 외부에서 넣어줄 수 있다. (= 인자argument)
+       함수가 실행을 마쳤을 때, 함수가 최종적으로 도출한 결과를 외부로 전달할 수 있다. (= 리턴값return value)
+  
+  
+  
+  
+  - 함수를 호출하는 방법
+    함수이름();
+    함수이름( 인자 );
+    함수이름( 인자1, 인자2, 인자3 );
+    var r = 함수이름();
+  
+    console.log( “효니” );
+    var name = prompt( “이름을 입력하세요.” );
+    parseInt()
+    isNaN()
+    숫자.toString()
+  
+  
+  
+  - 함수를 만드는 방법
+    // 인자도 없고, 리턴값도 없는 함수
+    function 함수이름()
+    {
+      // 함수 내부에서 실행할 코드들;
+    }
+  
+    // 인자가 있고, 리턴값은 없는 함수
+    function 함수이름( 매개변수1, 매개변수2, 매개변수3, … )
+    {
+      // 함수 내부에서 실행할 코드들;
+    }
+  
+    // 인자가 있고, 리턴값도 있는 함수
+    function 함수이름( 매개변수1, … )
+    {
+      // 함수 내부에서 실행할 코드들;
+      return 리턴값;
+    }
+  
+  
+  
+  - 함수의 역할
+    함수를 사용하면 알고리즘이 간결해진다.
+    프로그램의 세부기능을 분리하여 코드를 간략화하는데에 사용할 수 있다.
+    프로그램의 기능 조각을 “모듈(module)”이라고 부르는데, 함수를 적절히 사용해서 큰 기능의 프로그램을 작은 단위의 모듈로 분리.
+    사람이 코드를 읽고 쓰고 수정하기가 용이해진다.
+  
+  
+  
+  - 변수의 유효범위 (= scope)
+    전역변수(global variable) : 함수 바깥에서 만들어진 변수
+    지역변수(local variable)  : 함수 내부에서 만들어진 변수
+    전역변수는 코드 어디에서나 사용가능한 변수인 반면, 지역변수는 변수가 만들어진 함수 내에서만 사용가능하다.
+    만일 전역변수와 같은 이름의 지역변수가 존재할 경우, 전역변수에는 접근할 수 없고 지역변수만 사용할 수 있다.
+  
+  
+  
+  - 가변인자함수
+    받아들이는 인자의 갯수가 정해져있지 않은 함수. //ex. console.log();
+    함수 내부에서 arguments 라는 변수를 사용할 수 있는데, 이 변수에는 호출할 당시에 주어졌던 인자들이 배열로 들어있다.
+  
+  
+  
+  - 함수를 변수에 대입하기
+    var f = prompt;
+    f();
+  
+    함수를 변수에 담으면, 변수이름을 마치 함수이름인것마냥 사용해서 호출할 수 있다.
+  
+  
+  
+  - 익명함수(anonymous function)
+    function () {
+      // 함수 내부에서 실행할 코드들
+    }
+  
+  
+    1) 익명함수가 실행되는 경우 #1
+    var f = function() {
+      console.log(“asd”);
+    }
+    f();
+  
+  
+    2) 익명함수가 실행되는 경우 #2 : Intermediately-Invoked Function Expression (IIFE)
+    (function () {
+      var animal = “햄스터”;
+      console.log( “효니님 메롱~! 우리집 “+animal+” 귀여움 ㅋㅋ” );
+    })();
+  
+    var animal = “햄스터”;
+    console.log( “효니님 메롱~! 우리집 “+animal+” 귀여움 ㅋㅋ” );
+  
+    전역변수를 만들고싶지 않을 때 사용하는 용법.
+  
+  
+    3) 익명함수가 실행되는 경우 #3
+    function fn( A ) {
+      A();
+    }
+    fn( function() {
+      console.log( “효니님 오늘 좀 예쁘신듯? 평소에도 예쁘셨지만 오늘 특히 더..” );
+    } );
+    // 이벤트리스너
+    // 타이머
+  
+    setTimeout( function() {
+    }, 1000 );
+  
+    document.getElementById(“asd”).addEventListener(“click”, function() {
+    } );
+  
+  
+  
+  - 함수의 인자로 함수가 들어가는 경우의 예
+    배열을 순회하는 경우를 생각해보면..
+    var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    // 일반적인 방법
+    for(var i=0; i<arr.length; i+=1) {
+      console.log( arr[i] );
+    }
+  
+    배열이름.forEach( function(el,idx) {
+      console.log( idx+”번 인덱스에는 “+el+” 이 들어있다.” );
+    } );
+  
+    var newArray = 배열이름.filter( function(el,idx) {
+      return true;
+      return false;
+    } );
+  
+    var newArray = 배열이름.map( function(el,idx) {
+      return [Something];
+    } );
+  
+  
+  
+  - 함수의 리턴값으로 함수가 나오는 경우
+    function fn() {
+      return function() {
+         console.log( “안녕하세요~~” );
+      }
+    }
+    var r = fn();
+    r();
+  
+    function getPoint() {
+      var point = 70;
+      return function() {
+         console.log( “당신의 점수는 “+point+”점 입니다.” );
+      }
+    }
+    var printPoint = getPoint();
+    printPoint();
+  
+    지역변수를 이용하여 중요한 데이터를 보호하는 기법 => 클로저(closure)
+  
+  
+  
+  
+  - 재귀함수 (recursive function/call)
+    함수가 내부에서 자기자신을 다시 호출하는 경우.
+    재귀호출은 같은 형태의 상황을 반복해서 해결하고자 하는 경우에 적용할 수 있는 프로그래밍 기법이다.
+    알고리즘 문제에서 자주 등장한다.
+    */
+  </script>
+</body>
+
+</html>
