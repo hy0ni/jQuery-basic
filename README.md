@@ -2,7 +2,7 @@
     공부한 내용 기록하기
 
 ## javascript
-* [평균구하기](./javascript/20211220/ex1.html)
+<!-- * [평균구하기](./javascript/20211220/ex1.html)
 * [데이터형식(문자와 숫자)](./javascript/20211220/study1.html)
 * [변수/상수](./javascript/20211220/study2.html)
 * [참거짓 데이터 형태/boolean](./javascript/20211221/study1.html)
@@ -24,7 +24,10 @@
 * [생성자 함수](./javascript/20211224/study3.html)
 * [생성자 함수의 활용](./javascript/20211224/study4.html)
 * [태그 스타일 수정하기](./javascript/20211227/study1.html)
-* [논리 연산자](./javascript/or_and.md)
+* [논리 연산자](./javascript/or_and.md) -->
+* [변수(variables)/Number타입](./javascript/Variables/variables.html)
+* [String타입/undefined타입](./javascript/String_type/string_type.html)
+* [Boolean타입,흐름제어,조건문,반복문](./javascript/Boolean/boolean.html)
 
 ## jquery
 * [제이쿼리 기초문법](./jQuery/basic.md)
