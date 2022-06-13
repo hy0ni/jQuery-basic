@@ -33,7 +33,7 @@
       console.log( r ); // 1
     }
     fn();
-    console.log( r );
+    console.log( r ); //100
     */
 
 
@@ -46,12 +46,15 @@
 
     /*
     function sum3() {
-      var result = 0;
+      var result = 0; // 더한값을 담을 변수
+      //i가 0부터 arguments.length까지 i가 하나씩 증가
       for(var i=0; i<arguments.length; i+=1) {
+        //result = arguments i번째 숫자를 합산
         result += arguments[i];
       }
       return result;
     }
+    //인자의 갯수에 구애받지않음.
     var result = sum3( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 );
     console.log( result );
     */
