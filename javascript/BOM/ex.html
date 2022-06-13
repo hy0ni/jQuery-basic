@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>BOM 예제</title>
+</head>
+<script>
+    //console.log( window.location );
+
+  /*
+  window["alert"]("dasd");
+  window.alert("asd");
+  alert("asdasd");
+  */
+
+    //console.log( window.location.href );
+
+  /*
+  var min = 1000;
+  var max = 2000;
+  for(var i=0; i<10; i+=1) {
+    console.log( parseInt(window.Math.random()*100000000000)%(max-min)+min );
+  }
+  */
+
+
+  /*
+  var d1 = new window.Date();
+  console.log( d1 );
+  console.log( d1.getFullYear()+"-"+("0"+(d1.getMonth()+1)).slice(-2)+"-"+("0"+d1.getDate()).slice(-2)+" "+("0"+d1.getHours()).slice(-2)+":"+("0"+d1.getMinutes()).slice(-2)+":"+("0"+d1.getSeconds()).slice(-2) );
+  console.log( d1.getTime() );
+
+  var d2 = new window.Date(2021, 11, 25, 0, 0, 0);
+  console.log( "크리스마스까지 남은 시간은 ", (d2.getTime() - d1.getTime())/1000/60/60/24, "일 남았습니다." );
+  */
+
+
+  /*
+  console.log( 1 );
+  setTimeout(function() {
+    console.log( 2 );
+  }, 3000);
+  console.log( 3 );
+  */
+
+
+  /*
+  for( var i=1 ; i<=5 ; i+=1 ) {
+    setTimeout(function() {
+      console.log( i );
+    }, i*1000);
+  }
+  */
+
+  /*
+  var str = prompt("날짜와 시간을 입력하세요."); // 2021-12-25 09:45:00
+  var year = str.split(" ")[0].split("-")[0];
+  var month = parseInt(str.split(" ")[0].split("-")[1])-1;
+  var date = str.split(" ")[0].split("-")[2];
+  var d1 = new Date( year, month, date, str.split(" ")[1].split(":")[0], str.split(" ")[1].split(":")[1], str.split(" ")[1].split(":")[2]);
+  console.log( d1 );
+  */
+
+
+  /*
+  var d = new Date();
+  for(var idx in d) {
+    console.log(idx, typeof idx);
+  }
+  console.log("asd");
+  */
+</script>
+</body>
+
+</html>
