@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>DOM 예제</title>
+</head>
+
+<body>
+
+  <h1 id="intro" class="line" style="font-weight:bold;" data-asdasd="zxczxc">안녕하세요</h1>
+
+  <ul>
+    <li id="c1" data-price="5000">짜장면</li>
+    <li id="c2">짬뽕</li>
+    <li id="c3">탕수육</li>
+  </ul>
+
+  <a href="http://naver.com">네이버로 가기</a>
+
+  <script>
+    /*
+    var div = window.document.createElement("div"); // 메모리에 div태그를 하나 생성
+    document.getElementsByTagName("body")[0].append( div ); // 메모리에 존재하던 div태그를 body태그의 하위에 붙여넣는다.
+    document.getElementById("intro").setAttribute("data-asdasd", "12345");
+    console.log( document.getElementById("intro").getAttribute("data-asdasd") );
+    */
+
+    /*
+    var p = document.getElementsByTagName("ul")[0];
+    var c1 = document.getElementById("c1"); // 짬뽕
+    var c2 = document.getElementById("c2"); // 탕수육
+    p.insertBefore( c2, c1 );
+
+    c1.style.backgroundColor = "#efefef"; 
+    */
+
+
+    /*
+    document.getElementById("intro").addEventListener("click", function(ev) { // 이벤트리스너함수는 프로그래머가 호출할 필요가 없으므로 보통 익명함수로 만든다.
+      console.log( "h1 태그가 클릭되었음" );
+      console.log( ev );
+    });
+
+    document.addEventListener("keydown", function(ev) {
+      console.log( ev );
+    })
+    */
+
+
+    /*
+    document.getElementById("c1").addEventListener("click", function(ev) {
+      console.log( "LI태그가 클릭되었음" );
+    })
+    document.getElementsByTagName("ul")[0].addEventListener("click", function(ev) {
+      ev.stopPropagation();
+      console.log( "UL태그가 클릭되었음" );
+    })
+    document.addEventListener("click", function(ev) {
+      console.log( "BODY태그가 클릭되었음" );
+    })
+    */
+
+    /*
+    document.getElementsByTagName("a")[0].addEventListener("click", function(ev) {
+      if( confirm("정말 네이버로 가시겠습니까?") ) { }
+      else {
+        ev.preventDefault();
+      }
+    })
+    */
+
+    var node = document.getElementById("c1");
+
+    console.log(node.parentNode);
+    console.log(node.parentElement);
+    console.log(node.children);
+    console.log(node.childNodes);
+
+
+    var node2 = document.getElementsByTagName("ul")[0];
+    console.log(node2.childNodes); // 텍스트까지
+    console.log(node2.children); // 태그만
+  </script>
+</body>
+
+</html>
