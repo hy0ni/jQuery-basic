@@ -1,0 +1,114 @@
+## jQuery
+
+<br>
+
+> jQuery
+- DOM 조작을 쉽게 짧은 코드로 할 수 있으면서 동시에 IE/Chrome에서 같은 코드를 쓸 수 있도록 만들어진 라이브러리.<br>
+웹브라우저에서 제공하는 DOM 조작 기능은 코드가 길고 사용하기 불편하다.
+
+<br>
+
+> jQuery 초기화
+
+```javascript
+- CDN
+  <script src=“https://code.jquery.com/jquery-3.6.0.js”></script>
+- local
+  <script src=“jquery.js”></script>
+```
+
+<br>
+
+> 요소 찾기
+
+    $() 함수를 이용해서 요소를 일단 찾고, 찾아진 요소에 대해 조작을 수행하는 순서로 jQuery를 이용한다.
+
+    $( 문자열 ) => 문자열을 CSS셀렉터로 해석해서 대응하는 요소들을 찾아서 jquery객체를 리턴한다.
+
+    $( 노드객체 ) => 주어진 노드객체를 감싸고 있는 jquery객체를 리턴한다.
+
+    jquery객체안에 노드객체가 들어있는데, 노드객체는 0개 일수도 있고, 1개 일수도 있고, 2개 이상일 수도 있다.
+    jquery객체로 무언가 조작을 하게되면 jquery객체가 담고있는 모든 노드객체에 일괄적으로 적용된다.
+
+    노드객체를 여러개 갖고 있는 jquery객체에서 특정 노드객체 1개만 담긴 jquery객체를 뽑아낼 수 있다.
+    jquery객체.eq( 인덱스 );
+
+    자식노드를 가진 노드객체를 찾아서, 자식노드중에 무언가를 선택하고자 하는 경우
+    jquery객체.find( CSS셀렉터 );
+
+<br>
+
+> jquery객체의 기능 #1
+
+    jquery객체.html()
+    jquery객체.text()
+    jquery객체.addClass()
+    jquery객체.removeClass()
+    jquery객체.append()
+    jquery객체.prepend()
+    jquery객체.before()
+    jquery객체.after()
+    jquery객체.css()
+    jquery객체.attr()
+    jquery객체.val() => input, textarea, select
+    jquery객체.width()
+    jquery객체.height()
+    jquery객체.offset() => 부모요소의 좌상단점을 기준(원점)으로 한 요소의 위치
+    jquery객체.position() => 문서의 좌상단점을 기준(원점)으로 한 요소의 위치
+    jquery객체.scrollTop()
+    jquery객체.scrollLeft()
+    jquery객체.animate()
+    jquery객체.stop() => 선택된 요소가 애니메이션이 진행중인 경우, 애니메이션을 즉시 중단시킨다.
+
+<br>
+
+```javascript
+$('#box').animate({애니메이션이끝날시점css속성을담은객체},애니메이션의지속시간,애니메이션이끝난다음에실행될함수);
+
+$("#box").animate({
+      "left": "500px",
+      "top": "500px"
+    }, 500, function() {
+      console.log( "애니메이션이 끝났음" );
+    });
+```
+
+<br>
+
+>  메써드 체이닝
+
+    jquery객체.html(“…”).css(“…”).stop().animate();
+
+<br>
+
+> jquery객체의 기능 #2 : 이벤트
+
+```javascript
+// DOM 이벤트 바인딩
+document.getElementById(“box”).addEventListener(“click”, function(){…});
+
+// jQuery 이벤트 바인딩 : 이벤트를 바인딩하는 그 순간에 존재하는 요소에만 이벤트가 걸린다.
+$(“#box”).on(“click”, function(){…});
+
+ $("li").on("click", function(ev) {
+    // 5개의 li중에 지금 클릭된 li에 대한 노드객체는 ev.target 으로 얻을 수 있다.
+    console.log( $(ev.target).text()+": "+$(ev.target).attr("data-price") );
+  });
+
+
+// jQuery 이벤트 바인딩 : 이벤트를 바인딩하는 그 순간에 존재하지 않더라도 미래에 앞으로 추가될 요소에도 미리 이벤트를 걸어둘 수 있다.
+$(document).on(“click”, CSS셀렉터, function(){…});
+
+$(document).on("click", "li", function(ev) {
+      // 5개의 li중에 지금 클릭된 li에 대한 노드객체는 ev.target 으로 얻을 수 있다.
+      console.log( $(ev.target).text()+": "+$(ev.target).attr("data-price") );
+    });
+```
+
+<br>
+
+> jQuery함수 $() 의 다른 용법
+
+    $( 함수 );
+
+  HTML문서가 로드되어서 화면에 표시되기 직전에 함수가 실행된다.

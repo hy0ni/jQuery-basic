@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>jQuery 예제</title>
+</head>
+
+<body>
+  <div id="box" style="position:absolute;left:100px;top:100px;width:50px;height:50px;background-color:#ff0000;"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // 상자를 드래그하는 중인지 여부를 표시할 변수
+    var isDragging = false;
+    // 마지막으로 이벤트가 발생한 시점의 마우스 좌표
+    var mouseX, mouseY;
+    // 박스에서 마우스를 눌렀을 때
+    $("#box").on("mousedown", function (ev) {
+      isDragging = true;
+      mouseX = ev.clientX;
+      mouseY = ev.clientY;
+    });
+    // 박스에서 마우스를 땠을 때
+    $("#box").on("mouseup", function () {
+      isDragging = false;
+    });
+    // 문서에서 마우스가 이동할 때
+    $(document).on("mousemove", function (ev) {
+      //드래그 중일때에만 박스가 마우스를 따라오도록
+      if (isDragging) {
+        $("#box").css({
+          "left": (parseInt($("#box").css("left").replace("px", "")) + (ev.clientX - mouseX)) + "px",
+          "top": (parseInt($("#box").css("top").replace("px", "")) + (ev.clientY - mouseY)) + "px",
+        });
+        mouseX = ev.clientX;
+        mouseY = ev.clientY;
+      }
+    });
+  </script>
+
+
+
+  <!--
+    <script>
+    $("li"); // X 이 자리에서는 li가 아직 로드되지 않았음
+
+    $(function() { // 웹문서가 로드된 후에 실행되니까 
+      $("li"); // 이 자리에서는 li가 로드되었다는것을 확신할 수 있음
+    });
+    </script>
+
+    <ul>
+      <li data-price="6000">짜장면</li>
+      <li data-price="7000">짬뽕</li>
+      <li data-price="14000">탕수육</li>
+    </ul>
+    <input type="text" placeholder="주문하실 메뉴를 입력하세요">
+
+    <div class="sc" style="width:500px;height:500px;overflow:scroll;">
+      <div style="height:5000px"></div>
+    </div>
+
+    <div id="box" style="position:absolute;left:100px;top:100px;width:50px;height:50px;background-color:#ff0000;"></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    //$("li").eq(2).text("<b>양장피</b>");
+    //$("li").eq(2).append( "<span>14000원</span>" );
+
+    $("li").eq(2).after( "<li data-price='20000'>양장피</li>" );
+    $("ul").append( "<li data-price='25000'>팔보채</li>" );
+
+    //console.log( $("li").eq(0).attr("data-price") );
+    //console.log( $("li").eq(2).position() );
+
+    /*
+    $("#box").animate({
+      "left": "500px",
+      "top": "500px"
+    }, 500, function() {
+      console.log( "에니메이션이 끝났음" );
+    });
+    */
+
+    /*
+    $("li").on("click", function(ev) {
+      // 5개의 li중에 지금 클릭된 li에 대한 노드객체는 ev.target 으로 얻을 수 있다.
+      console.log( $(ev.target).text()+": "+$(ev.target).attr("data-price") );
+    });
+    */
+
+    $(document).on("click", "li", function(ev) {
+      // 5개의 li중에 지금 클릭된 li에 대한 노드객체는 ev.target 으로 얻을 수 있다.
+      console.log( $(ev.target).text()+": "+$(ev.target).attr("data-price") );
+    });
+
+    $("ul").append("<li data-price='8000'>냉짬뽕</li>");
+    </script>
+    -->
+</body>
+
+</html>

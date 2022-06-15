@@ -33,6 +33,9 @@
 * [객체(object)](./javascript/Object/object.md)
 * [BOM (Browser Object Model)](./javascript/BOM/BOM.md)
 * [DOM (Document Object Model)](./javascript/DOM/DOM.md)
+* [jQuery](./javascript/jQuery/jQuery.md)
+* [검색기능구현](./javascript/SEARCH/index.html)
+* [마우스 드래그 앤 드롭](./javascript/jQuery/drag_drop.html)
 
 ## jquery
 * [제이쿼리 기초문법](./jQuery/basic.md)

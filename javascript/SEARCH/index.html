@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Montserrat";
+    }
+
+    .searchbox {
+      width: 90%;
+      margin: 10px auto;
+    }
+
+    .header {
+      background: #ECDFBF;
+      overflow: hidden;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .header h1 {
+      text-transform: uppercase;
+      color: white;
+      margin: 0;
+      margin-bottom: 8px;
+    }
+
+    #value {
+      border: none;
+      background: #E0D3B6;
+      padding: 6px;
+      font-size: 18px;
+      width: 80%;
+      border-radius: 6px;
+      color: white;
+    }
+
+    #value:focus {
+      outline: none;
+    }
+
+    .container {
+      background: #FFFFF5;
+      padding: 1%;
+    }
+
+    .item {
+      margin: 3% 0px;
+      display: flex;
+      align-items: center;
+    }
+
+    .icon {
+      width: 25px;
+      height: 25px;
+      background: #E0D3B6;
+      color: white;
+      font-size: 15px;
+      text-align: center;
+      line-height: 25px;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+
+    .name {
+      font-size: 17px;
+      font-weight: 470;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="searchbox">
+    <div class="header">
+      <h1>Search</h1>
+      <!-- input 태그에 onkeyup을 사용해 키를 누를때마다 filter()라는 함수를 실행시키기 -->
+      <input onkeyup="filter()" type="text" id="value" placeholder="Type to Search">
+    </div>
+
+    <div class="container">
+
+      <div class="item">
+        <span class="icon">A</span>
+        <span class="name">이프미</span>
+      </div>
+
+      <div class="item">
+        <span class="icon">O</span>
+        <span class="name">Orange</span>
+      </div>
+
+      <div class="item">
+        <span class="icon">M</span>
+        <span class="name">한글</span>
+      </div>
+
+      <div class="item">
+        <span class="icon">S</span>
+        <span class="name">Strawberry</span>
+      </div>
+
+      <div class="item">
+        <span class="icon">W</span>
+        <span class="name">이프미</span>
+      </div>
+
+      <div class="item">
+        <span class="icon">G</span>
+        <span class="name">한글</span>
+      </div>
+
+      <div class="item">
+        <span class="icon">P</span>
+        <span class="name">Pear</span>
+      </div>
+
+      <div class="item">
+        <span class="icon">C</span>
+        <span class="name">한글</span>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    function filter() {
+
+      var value, name, item, i;
+
+      value = document.getElementById("value").value.toUpperCase();//대소문자를 구분하지 않고 가져오기 위해 검색한 값을 toUpperCase()로 모두 대문자로 변환해 변수에 담기
+      item = document.getElementsByClassName("item");
+      //목록에 있는 모든 아이템을 getElementsByClassName으로 가져오기
+
+      for (i = 0; i < item.length; i++) {//목록을 for문으로 돌려 i번째 아이템의 자식 요소인 name의 값을 가져온다.
+        name = item[i].getElementsByClassName("name");
+        if (name[0].innerHTML.toUpperCase().indexOf(value) > -1) {//비교를 위해 name의 값도 대문자로 바꿔준 후 .indexOf()로 검색한 값이 있는지 없는지 확인하기. 값이 없을 경우 -1로 반환
+          item[i].style.display = "flex";
+        } else {
+          item[i].style.display = "none";
+        }
+        //값이 -1이 아닐경우 item[i].style.display를 flex로 바꿔 시각화 아닐 경우 none로 설정해 검색 목록에 띄우지 않기
+      }
+    }
+  </script>
+</body>
+
+</html>
