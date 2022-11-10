@@ -553,7 +553,7 @@ $(document).ready(function(){// $(function(){});축약형
       }
     });
 
-    //gnd안의 리스트를 클릭했을 때 활성화
+    //gnb안의 리스트를 클릭했을 때 활성화
     $(".train > li").click(function(){
       $(".train > li").removeClass("on");
       $(this).addClass("on");
